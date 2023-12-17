@@ -11,10 +11,10 @@ app.use(bodyParser.json());
 
 // Konfigurasi koneksi database
 const dbConfig = {
-  host: "localhost",
-  user: "root", // Ganti dengan username MySQL Anda
-  password: "", // Ganti dengan password MySQL Anda
-  database: "data_depo",
+  host: 'bnf14qjca1nigzztt2vn-mysql.services.clever-cloud.com',
+  user: 'ugsfrekklf8lxln3', // Ganti dengan username MySQL Anda
+  password: 'nJJMRr688CTAp6aeLeer', // Ganti dengan password MySQL Anda
+  database: 'bnf14qjca1nigzztt2vn'
 };
 
 // Buat koneksi ke database

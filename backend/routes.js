@@ -18,9 +18,8 @@ const dbConfig = {
 };
 
 // Buat koneksi ke database
-const urlDB = `mysql://root:3Ba1d43a6b432ehdDGEg114ffb11bAGD@roundhouse.proxy.rlwy.net:30368/railway`;
 
-const connection = mysql.createConnection(urlDB);
+const connection = mysql.createConnection(dbConfig);
 connection.connect((err) => {
   if (err) {
     console.error("Error connecting to database:", err);

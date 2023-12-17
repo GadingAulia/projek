@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mysql = require("mysql");
 const cors = require("cors"); // Import module 'cors'
 const path = require("path");
+require('dotenv').config();
 
 const app = express();
 
@@ -11,10 +12,10 @@ app.use(bodyParser.json());
 
 // Konfigurasi koneksi database
 const dbConfig = {
-  host: 'bnf14qjca1nigzztt2vn-mysql.services.clever-cloud.com',
-  user: 'ugsfrekklf8lxln3', // Ganti dengan username MySQL Anda
-  password: 'nJJMRr688CTAp6aeLeer', // Ganti dengan password MySQL Anda
-  database: 'bnf14qjca1nigzztt2vn'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE
 };
 
 // Buat koneksi ke database
@@ -63,7 +64,7 @@ app.post("/receivedata", (req, res) => {
 });
 
 // Port untuk server
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
